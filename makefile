@@ -16,12 +16,12 @@ objs:
 	@echo "Building..."
 	@mkdir -p obj
 	
-	$(AC) obj/start.o src/asm/start.asm
-	$(AC) obj/syscall.o src/asm/syscall.asm
+	$(AC) obj/asm_start.o src/asm/start.asm
+	$(AC) obj/asm_syscall.o src/asm/syscall.asm
 
-	$(CC) obj/src_syscall.o src/syscall.c
-	$(CC) obj/src_io.o src/io.c
-	$(CC) obj/src_main.o src/main.c
+	$(CC) obj/c_syscall.o src/syscall.c
+	$(CC) obj/c_io.o src/io.c
+	$(CC) obj/c_main.o src/main.c
 
 run: all
 	@./bin/main

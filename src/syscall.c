@@ -7,7 +7,7 @@ extern void syscall_read__(u32, char*, u64);
 extern void syscall_write__(u32, const char*, u64);
 
 void syscall_restart() {
-    syscall_restart__();
+    syscall_restart_syscall__();
 }
 
 void syscall_exit(i32 error_code) {
