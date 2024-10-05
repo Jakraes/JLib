@@ -1,14 +1,14 @@
-section .note.GNU-stack noalloc noexec nowrite progbits
+section     .note.GNU-stack noalloc noexec nowrite progbits
 
 section     .text
-global      syscall_restart__
+global      syscall_restart_syscall__
 global      syscall_exit__
 global      syscall_fork__
 global      syscall_read__
 global      syscall_write__
 
-; void syscall_restart__();
-syscall_restart__:
+; void syscall_restart_syscall__();
+syscall_restart_syscall__:
     push    ebp
     mov     ebp, esp
     mov     eax, 0x00

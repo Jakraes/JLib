@@ -18,7 +18,6 @@ objs:
 	
 	$(AC) obj/start.o src/asm/start.asm
 	$(AC) obj/syscall.o src/asm/syscall.asm
-	$(AC) obj/io.o src/asm/io.asm
 
 	$(CC) obj/src_syscall.o src/syscall.c
 	$(CC) obj/src_io.o src/io.c

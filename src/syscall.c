@@ -1,6 +1,6 @@
 #include "j_syscall.h"
 
-extern void syscall_restart__();
+extern void syscall_restart_syscall__();
 extern void syscall_exit__(i32);
 extern void syscall_fork__();
 extern void syscall_read__(u32, char*, u64);
