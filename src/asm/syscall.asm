@@ -11,7 +11,7 @@ global      syscall_write__
 syscall_restart__:
     push    ebp
     mov     ebp, esp
-    mov     eax, 0
+    mov     eax, 0x00
     int     0x80
     leave
     ret
@@ -20,7 +20,7 @@ syscall_restart__:
 syscall_exit__:
     push    ebp
     mov     ebp, esp
-    mov     eax, 1
+    mov     eax, 0x01
     mov     ebx, [esp + 8]
     int     0x80
     leave
@@ -30,7 +30,7 @@ syscall_exit__:
 syscall_fork__:
     push    ebp
     mov     ebp, esp
-    mov     eax, 2
+    mov     eax, 0x02
     int     0x80
     leave
     ret
@@ -39,10 +39,10 @@ syscall_fork__:
 syscall_read__:
     push    ebp
     mov     ebp, esp
-    mov     eax, 3            ; sys_read
-    mov     ebx, [ebp + 8]    ; fd
-    mov     ecx, [ebp + 12]   ; buf
-    mov     edx, [ebp + 16]   ; count
+    mov     eax, 0x03
+    mov     ebx, [ebp + 8]    
+    mov     ecx, [ebp + 12]
+    mov     edx, [ebp + 16]
     int     0x80
     leave
     ret
@@ -51,10 +51,10 @@ syscall_read__:
 syscall_write__:
     push    ebp
     mov     ebp, esp
-    mov     eax, 4            ; sys_write
-    mov     ebx, [ebp + 8]    ; fd
-    mov     ecx, [ebp + 12]   ; buf
-    mov     edx, [ebp + 16]   ; count
+    mov     eax, 0x04
+    mov     ebx, [ebp + 8]
+    mov     ecx, [ebp + 12]
+    mov     edx, [ebp + 16]
     int     0x80
     leave
     ret
